@@ -25,7 +25,7 @@ const Button = styled.button`
   align-items: center;
   flex-shrink: 0;
 
-  .button {
+  .img {
     width: 100%;
     height: 100%;
   }
