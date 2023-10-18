@@ -26,8 +26,11 @@ const Button = styled.button`
   align-items: center;
   :hover .checkbox{
     display: block;
-    transition: 0.2s;
-    cursor: pointer;
+    }
+
+    :hover{
+        transition: 0.2s;
+        cursor: pointer;
     }
 
     .checkbox{
