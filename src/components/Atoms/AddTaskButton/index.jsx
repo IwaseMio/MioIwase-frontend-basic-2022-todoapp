@@ -32,7 +32,7 @@ const Button = styled.button`
 
   .task {
     font-family: ${FONTFAMILY.NOTO_SANS};
-    text: ${TEXT.S};
+    ${TEXT.S};
     color: ${COLOR.GREEN};
   }
 
