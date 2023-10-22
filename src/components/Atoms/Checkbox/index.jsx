@@ -24,19 +24,18 @@ const Button = styled.button`
   padding: 0;
   justify-content: center;
   align-items: center;
-  :hover .checkbox{
+  :hover .checkbox {
     display: block;
-    }
+  }
 
-    :hover{
-        transition: 0.2s;
-        cursor: pointer;
-    }
+  :hover {
+    transition: 0.2s;
+    cursor: pointer;
+  }
 
-    .checkbox{
-        width: 16px;
-        height: 16px;
-        display: none;
-    }
+  .checkbox {
+    width: 16px;
+    height: 16px;
+    display: none;
   }
 `;
