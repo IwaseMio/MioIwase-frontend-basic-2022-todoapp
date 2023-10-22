@@ -6,9 +6,7 @@ import COLOR from "../../../variables/color";
 export const Checkbox = (props) => {
   return (
     <Button onClick={props.onClick}>
-      <div>
-        <img src={check} className="checkbox" />
-      </div>
+      <img src={check} className="checkbox" />
     </Button>
   );
 };
