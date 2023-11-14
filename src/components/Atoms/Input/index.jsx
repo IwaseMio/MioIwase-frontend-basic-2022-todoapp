@@ -7,22 +7,17 @@ import TEXT from "../../../variables/texts";
 export const Input = ({ onEditComplete, defaultValue }) => {
   const inputRef = useRef(null);
 
-  const onkeypress = (e) => {
-    if (e.key === "Enter") {
-      inputRef.current.onblur();
-      inputRef.current.onkeypress("blur", () => {
-        onEditComplete(inputRef.current.value);
-        onkeypress(inputRef.current.value);
-      });
-    }
-  };
-
-  useEffect((props) => {
+  useEffect(() => {
     inputRef.current.value = defaultValue;
     inputRef.current.focus();
     inputRef.current.onblur = (e) => {
       const inputText = e.target.value;
-      props.onEditComplete(inputText);
+      onEditComplete(inputText);
+    };
+    inputRef.current.onkeypress = (e) => {
+      if (e.key === "Enter") {
+        inputRef.current.blur();
+      }
     };
   }, []);
 
