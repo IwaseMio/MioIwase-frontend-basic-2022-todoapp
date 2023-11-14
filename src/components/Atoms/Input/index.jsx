@@ -21,7 +21,7 @@ export const Input = ({ onEditComplete, defaultValue }) => {
     };
   }, []);
 
-  return <StyledInput ref={inputRef} name="input" type="text" />;
+  return <StyledInput ref={inputRef} type="text" />;
 };
 
 export default Input;
