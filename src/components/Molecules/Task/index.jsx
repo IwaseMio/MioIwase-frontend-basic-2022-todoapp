@@ -46,6 +46,7 @@ export default Task;
 const StyledWrapper = styled.div`
   display: flex;
   gap: 10px;
+  margin: 2px 6px;
 `;
 
 const StyledCheckboxWrapper = styled.div`
