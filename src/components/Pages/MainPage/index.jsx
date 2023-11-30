@@ -2,7 +2,6 @@ import styled from "styled-components";
 import React from "react";
 import { Title } from "../../Atoms/Title";
 import TodoCard from "../../Organisms/TodoCard";
-import COLOR from "../../../variables/color";
 import BREAKPOINT from "../../../variables/breakpoint";
 
 export const MainPage = () => {
