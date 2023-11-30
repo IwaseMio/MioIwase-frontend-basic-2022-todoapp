@@ -57,6 +57,7 @@ const StyledNameAndButtonWrapper = styled.div`
   display: flex;
   gap: 10px;
   width: 100%;
+  overflow: hidden;
 `;
 
 const StyledTaskName = styled.div`
@@ -64,6 +65,9 @@ const StyledTaskName = styled.div`
   color: ${COLOR.LIGHT_GRAY};
   font-family: ${FONTFAMILY.NOTO_SANS};
   width: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 `;
 
 const StyledEditButtonWrapper = styled.div`
