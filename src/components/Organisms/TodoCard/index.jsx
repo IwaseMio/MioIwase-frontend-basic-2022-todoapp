@@ -28,7 +28,7 @@ export const TodoCard = () => {
   };
 
   useEffect(() => {
-    const savedTaskList = localStorage.getItem("taskList");
+    const savedTaskList = localStorage.getItem("storage");
     if (savedTaskList !== null) {
       const parsedTaskList = JSON.parse(savedTaskList);
       setTaskList(parsedTaskList);
