@@ -28,7 +28,7 @@ export const TodoCard = () => {
   };
 
   useEffect(() => {
-    const savedTaskList = localStorage.getItem("savedTaskList");
+    const savedTaskList = localStorage.getItem("taskList");
     if (savedTaskList !== null) {
       const parsedTaskList = JSON.parse(savedTaskList);
       setTaskList(parsedTaskList);
@@ -36,8 +36,8 @@ export const TodoCard = () => {
   }, []);
 
   useEffect(() => {
-    localStorage.setItem("savedTaskList", JSON.stringify(savedTaskList));
-  }, [savedTaskList]);
+    localStorage.setItem("storage", JSON.stringify(taskList));
+  }, [taskList]);
 
   return (
     <StyledWrapper>
@@ -73,5 +73,4 @@ const StyledTaskList = styled.div`
   flex-direction: column;
   width: 100%;
   align-self: stretch;
-  gap: 10px;
 `;
