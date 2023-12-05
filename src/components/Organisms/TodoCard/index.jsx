@@ -60,6 +60,7 @@ export default TodoCard;
 
 const StyledWrapper = styled.div`
   padding: 20px;
+  gap: 10px;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -69,6 +70,7 @@ const StyledWrapper = styled.div`
 
 const StyledTaskList = styled.div`
   display: flex;
+  gap: 10px;
   flex-direction: column;
   width: 100%;
   align-self: stretch;
