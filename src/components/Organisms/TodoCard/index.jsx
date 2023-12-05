@@ -70,8 +70,8 @@ const StyledWrapper = styled.div`
 
 const StyledTaskList = styled.div`
   display: flex;
-  gap: 10px;
   flex-direction: column;
+  gap: 10px;
   width: 100%;
   align-self: stretch;
 `;
