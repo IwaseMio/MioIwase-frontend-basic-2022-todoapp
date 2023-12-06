@@ -5,8 +5,8 @@ import FONTFAMILY from "../../../variables/font_family.js";
 import TEXT from "../../../variables/texts";
 import BREAKPOINT from "../../../variables/breakpoint.js";
 
-export const Alert = () => {
-  return <TaskAlert></TaskAlert>;
+export const Alert = ({ isActive, alertText }) => {
+  return <TaskAlert isActive={isActive}>{alertText}</TaskAlert>;
 };
 
 const TaskAlert = styled.div`
@@ -19,4 +19,9 @@ const TaskAlert = styled.div`
   background: ${COLOR.RED};
   font-family: ${FONTFAMILY.NOTO_SANS};
   ${TEXT.S}
+
+  @media (max-width: ${BREAKPOINT.MEDIUM}) {
+    top: 40px;
+    width: 100%;
+  }
 `;
