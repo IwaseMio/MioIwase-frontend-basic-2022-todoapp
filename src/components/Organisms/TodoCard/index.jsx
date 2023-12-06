@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Task from "../../Molecules/Task";
 import AddTaskButton from "../../Atoms/AddTaskButton";
 import COLOR from "../../../variables/color";
@@ -26,6 +26,18 @@ export const TodoCard = () => {
     }
     setTaskList(changedTaskList);
   };
+
+  useEffect(() => {
+    const savedTaskList = localStorage.getItem("storage");
+    if (savedTaskList !== null) {
+      const parsedTaskList = JSON.parse(savedTaskList);
+      setTaskList(parsedTaskList);
+    }
+  }, []);
+
+  useEffect(() => {
+    localStorage.setItem("storage", JSON.stringify(taskList));
+  }, [taskList]);
 
   return (
     <StyledWrapper>
@@ -59,7 +71,7 @@ const StyledWrapper = styled.div`
 const StyledTaskList = styled.div`
   display: flex;
   flex-direction: column;
+  gap: 10px;
   width: 100%;
   align-self: stretch;
-  gap: 10px;
 `;
