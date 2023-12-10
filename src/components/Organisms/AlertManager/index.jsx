@@ -7,7 +7,7 @@ const AlertManager = () => {
   const AlertHandlerContext = useAlertHandlerContext();
 
   useEffect(() => {
-    if (AlertHandlerContext.isActive === true) {
+    if (AlertHandlerContext && AlertHandlerContext.isActive === true) {
       setTimeout(() => {
         AlertHandlerContext.closeAlert();
       }, 5000);
@@ -16,10 +16,12 @@ const AlertManager = () => {
 
   return (
     <AlertWrapper>
-      <Alert
-        isActive={AlertHandlerContext.isActive}
-        alertText={AlertHandlerContext.alertText}
-      />
+      {AlertHandlerContext && (
+        <Alert
+          isActive={AlertHandlerContext.isActive}
+          alertText={AlertHandlerContext.alertText}
+        />
+      )}
     </AlertWrapper>
   );
 };
