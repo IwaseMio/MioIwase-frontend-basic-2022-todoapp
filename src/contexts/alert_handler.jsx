@@ -9,18 +9,17 @@ export const AlertHandlerProvider = ({ children }) => {
   });
 
   const setAlert = (errorText) => {
-    setAlertState({
-      ...alertState,
+    setAlertState((prevAlertState) => ({
+      ...prevAlertState,
       visible: true,
       errorText: errorText,
-    });
+    }));
   };
 
   const closeAlert = () => {
-    setAlertState({
-      ...alertState,
-      visible: false,
-    });
+    const alertStateCopy = Object.assign({}, alertState);
+    alertStateCopy.visible = false;
+    setAlertState(alertStateCopy);
   };
 
   const contextValue = {
