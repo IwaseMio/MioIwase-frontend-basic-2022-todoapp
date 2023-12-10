@@ -3,9 +3,12 @@ import React, { useState, useEffect } from "react";
 import Task from "../../Molecules/Task";
 import AddTaskButton from "../../Atoms/AddTaskButton";
 import COLOR from "../../../variables/color";
+import AlertManager from "../AlertManager";
+import { useAlertHandlerContext } from "../../../contexts/alert_handler";
 
 export const TodoCard = () => {
   const [taskList, setTaskList] = useState([]);
+  const AlertHandlerContext = useAlertHandlerContext();
 
   const onAddTaskButtonClick = () => {
     setTaskList([...taskList, { name: "", initializing: true }]);
@@ -21,10 +24,12 @@ export const TodoCard = () => {
     const changedTaskList = [...taskList];
     if (value === "") {
       changedTaskList.splice(index, 1);
+      AlertHandlerContext.setAlert("タスクの名前が設定されていません。");
+      window.setTimeout(() => AlertHandlerContext.closeAlert(), 5000);
     } else {
-      changedTaskList.splice(index, 1, { name: value, initializing: false });
+      changedTaskList[index] = { name: value, initializing: false };
+      setTaskList(changedTaskList);
     }
-    setTaskList(changedTaskList);
   };
 
   useEffect(() => {
@@ -52,6 +57,7 @@ export const TodoCard = () => {
             onTaskComplete={() => onTaskComplete(index)}
           />
         ))}
+        <AlertManager />
       </StyledTaskList>
     </StyledWrapper>
   );

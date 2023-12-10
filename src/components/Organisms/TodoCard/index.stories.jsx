@@ -2,6 +2,6 @@ import { TodoCard } from "./index";
 
 export default { component: TodoCard };
 
-export const Default = {
-  args: {},
-};
+const Template = (args) => <TodoCard {...args} />;
+
+export const Default = Template.bind({});
