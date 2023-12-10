@@ -27,7 +27,7 @@ export const TodoCard = () => {
       AlertHandlerContext.setAlert("タスクの名前が設定されていません。");
       window.setTimeout(() => AlertHandlerContext.closeAlert(), 5000);
     } else {
-      changedTaskList[index] = { name: value, initializing: false };
+      changedTaskList.splice[index] = { name: value, initializing: false };
       setTaskList(changedTaskList);
     }
   };
