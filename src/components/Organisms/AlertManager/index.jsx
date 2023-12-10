@@ -16,12 +16,12 @@ const AlertManager = () => {
 
   return (
     <AlertWrapper>
-      {AlertHandlerContext && (
+      {
         <Alert
           isActive={AlertHandlerContext.visible}
           alertText={AlertHandlerContext.errorText}
         />
-      )}
+      }
     </AlertWrapper>
   );
 };
