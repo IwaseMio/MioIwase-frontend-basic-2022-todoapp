@@ -24,6 +24,7 @@ export const TodoCard = () => {
     const changedTaskList = [...taskList];
     if (value === "") {
       changedTaskList.splice(index, 1);
+      setTaskList(changedTaskList);
       AlertHandlerContext.setAlert("タスクの名前が設定されていません。");
       window.setTimeout(() => AlertHandlerContext.closeAlert(), 5000);
     } else {
@@ -57,7 +58,6 @@ export const TodoCard = () => {
             onTaskComplete={() => onTaskComplete(index)}
           />
         ))}
-        <AlertManager />
       </StyledTaskList>
     </StyledWrapper>
   );
