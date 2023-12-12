@@ -3,7 +3,6 @@ import React, { useState, useEffect } from "react";
 import Task from "../../Molecules/Task";
 import AddTaskButton from "../../Atoms/AddTaskButton";
 import COLOR from "../../../variables/color";
-import AlertManager from "../AlertManager";
 import { useAlertHandlerContext } from "../../../contexts/alert_handler";
 
 export const TodoCard = () => {
@@ -50,13 +49,15 @@ export const TodoCard = () => {
       <AddTaskButton onClick={onAddTaskButtonClick} />
       <StyledTaskList>
         {taskList.map((task, index) => (
-          <Task
-            key={index}
-            taskName={task.name}
-            defaultIsEditing={task.initializing}
-            onTaskNameChange={(value) => onTaskNameChange(value, index)}
-            onTaskComplete={() => onTaskComplete(index)}
-          />
+          <TaskGap>
+            <Task
+              key={index}
+              taskName={task.name}
+              defaultIsEditing={task.initializing}
+              onTaskNameChange={(value) => onTaskNameChange(value, index)}
+              onTaskComplete={() => onTaskComplete(index)}
+            />
+          </TaskGap>
         ))}
       </StyledTaskList>
     </StyledWrapper>
@@ -66,7 +67,6 @@ export default TodoCard;
 
 const StyledWrapper = styled.div`
   padding: 20px;
-  gap: 10px;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -77,7 +77,10 @@ const StyledWrapper = styled.div`
 const StyledTaskList = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 10px;
   width: 100%;
   align-self: stretch;
+`;
+
+const TaskGap = styled.div`
+  margin-top: 10px;
 `;

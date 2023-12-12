@@ -6,7 +6,7 @@ import COLOR from "../../../variables/color";
 export const EditButton = (props) => {
   return (
     <Button onClick={props.onClick}>
-      <img src={pencil} className="button" />
+      <img src={pencil} className="img-size" />
     </Button>
   );
 };
@@ -25,7 +25,7 @@ const Button = styled.button`
   align-items: center;
   flex-shrink: 0;
 
-  .img {
+  .img-size {
     width: 100%;
     height: 100%;
   }
