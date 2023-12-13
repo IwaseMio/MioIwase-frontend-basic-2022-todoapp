@@ -17,9 +17,7 @@ export const AlertHandlerProvider = ({ children }) => {
   };
 
   const closeAlert = () => {
-    const alertStateCopy = Object.assign({}, alertState);
-    alertStateCopy.visible = false;
-    setAlertState(alertStateCopy);
+    setAlertState({ ...alertState, visible: false });
   };
 
   const contextValue = {
