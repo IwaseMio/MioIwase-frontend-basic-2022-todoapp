@@ -65,6 +65,7 @@ const StyledTaskName = styled.div`
   color: ${COLOR.LIGHT_GRAY};
   font-family: ${FONTFAMILY.NOTO_SANS};
   width: 100%;
+  gap: 10px;
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
